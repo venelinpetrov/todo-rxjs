@@ -1,0 +1,17 @@
+
+<create-todo></create-todo>
+<h2>Uncompleted:</h2>
+<app-todo
+  *ngFor="let todo of todosStore.uncompletedTodos$ | async; trackBy: todosTrackFn"
+  [todo]="todo"
+  (complete)="todosStore.setCompleted(todo.id, $event)"
+  (remove)="todosStore.removeTodo($event)">
+</app-todo>
+
+<h2>Completed:</h2>
+<app-todo
+  *ngFor="let todo of todosStore.completedTodos$ | async; trackBy: todosTrackFn"
+  [todo]="todo"
+  (complete)="todosStore.setCompleted(todo.id, $event)"
+  (remove)="todosStore.removeTodo($event)">
+</app-todo>

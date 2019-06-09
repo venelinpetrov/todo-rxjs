@@ -1,0 +1,4 @@
+<div>
+    <input type="text" #todoTitleInput (keyup.enter)="onTodoCreate(todoTitleInput.value)" placeholder="Toto title...">
+    <button (click)="onTodoCreate(todoTitleInput.value)">Add</button>
+</div>
